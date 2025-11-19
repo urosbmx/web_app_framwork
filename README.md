@@ -72,22 +72,16 @@ pytest tests/api
 ## 📂 Project Structure
 
 ```
-web_app_automation_framework/
+web_app_framwork/
 │
-├─ pages/                  # Page Objects for Playwright
-│   ├─ home_page.py
-│   └─ base_page.py
+├── api_tests/ # API automation tests
+├── ui_tests/ # UI automation tests
+├── docs/ # Documentation (optional)
 │
-├─ helpers/                # Helper utilities
-│   └─ utils.py
-│
-├─ tests/                  # Test cases
-│   ├─ tests_twitch.py     # UI tests
-│   └─ api/                # API tests
-│
-├─ requirements.txt        # Python dependencies
-├─ pytest.ini              # Pytest configuration
-└─ README.md               # Project documentation
+├── .env # Environment variables
+├── pytest.ini # Pytest configuration
+├── requirements.txt # Python dependencies
+└── README.md # This documentation file
 ```
 
 ---

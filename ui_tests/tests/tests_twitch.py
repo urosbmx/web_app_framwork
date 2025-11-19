@@ -1,11 +1,14 @@
 import logging
 
+import pytest
+
 from ui_tests.pages.home_page import HomePage
 
 logger = logging.getLogger(__name__)
 
 
 class TestTwitch:
+    @pytest.mark.smoke_test_twitch
     def test_home_page_header(self, mobile_page):
         logger.info("Starting Test")
 

@@ -19,6 +19,7 @@ class TestFinalSpace:
     - Sorting episodes and limiting number of results.
     """
 
+    @pytest.mark.smoke_test_api
     def test_final_space_all_episodes(self, base_url):
         """
         Test retrieving all episodes from the API.
@@ -40,6 +41,7 @@ class TestFinalSpace:
         logger.info(f"Validated {len(episodes)} episodes")
 
     @pytest.mark.parametrize("episodes", [1, 2, 3, 4, 5])
+    @pytest.mark.smoke_test_api
     def test_final_space_get_singe_episode(self, episodes, base_url):
         """
         Test retrieving a single episode by ID.
@@ -113,6 +115,7 @@ class TestFinalSpace:
         ("desc", 14),
         ("asc", 21),
     ])
+    @pytest.mark.smoke_test_api
     def test_final_space_get_all_episodes_and_sort_and_limit(self, order, number, base_url):
         """
         Test retrieving episodes with sorting and limit.

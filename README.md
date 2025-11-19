@@ -1,19 +1,15 @@
-# Twitch Automation Testing Framework
+# Web App Framework
 
 ## 📌 Overview
 
-This repository contains two automated test frameworks implemented in **Python** using **Pytest**:
-
-1. **Playwright-based UI automation** for Twitch mobile website.
-2. **API automation framework** for testing Twitch endpoints.
+This repository contains an automated testing framework implemented in **Python**, leveraging **Pytest** and **Playwright** for end-to-end UI and API testing.
 
 The project demonstrates:
-
-* Robust test structure
+* Modular, maintainable test structure
 * Page Object Model (POM) for UI tests
-* Handling dynamic content (lazy-loading, SPA)
-* Reusable helper functions for scrolling, clicking, and screenshots
-* Pytest fixtures for setup and teardown
+* Strategies for dynamic web content (SPA, lazy-loading)
+* Reusable utility functions for scrolling, clicking, and taking screenshots
+* Pytest fixtures for robust setup and teardown processes
 
 ---
 
@@ -22,8 +18,8 @@ The project demonstrates:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/twitch-automation-framework.git
-cd twitch-automation-framework
+git clone https://github.com/urosbmx/web_app_framwork.git
+cd web_app_framwork
 ```
 
 2. Create and activate a virtual environment:
@@ -55,17 +51,30 @@ playwright install
 Run all UI tests:
 
 ```bash
-pytest tests/tests_twitch.py
+pytest ui_tests/
 ```
-
 
 ### 2. API Tests
 
 Run all API tests:
 
 ```bash
-pytest tests/api
+pytest api_tests/
 ```
+
+### 3. Running Tests with Markers
+
+You can run specific types of tests using pytest markers. For example:
+
+- Run only UI tests:
+  ```bash
+  pytest -m "smoke_test_twitch"
+  ```
+
+- Run only API tests:
+  ```bash
+  pytest -m "smoke_test_api"
+  ```
 
 ---
 
@@ -74,25 +83,25 @@ pytest tests/api
 ```
 web_app_framwork/
 │
-├── api_tests/ # API automation tests
-├── ui_tests/ # UI automation tests
-├── docs/ # Documentation (optional)
+├── api_tests/    # API automation tests
+├── ui_tests/     # UI automation tests
+├── docs/         # Documentation and test artifacts
 │
-├── .env # Environment variables
-├── pytest.ini # Pytest configuration
+├── .env          # Environment variables
+├── pytest.ini    # Pytest configuration
 ├── requirements.txt # Python dependencies
-└── README.md # This documentation file
+└── README.md     # This documentation file
 ```
 
 ---
 
 ## ⚡ Features
 
-* **Page Object Model (POM)** for maintainable UI tests
-* **Dynamic element handling** (scroll, lazy-load)
-* **Safe click helpers** to avoid timeout issues
-* **Screenshot on failure** for debugging
-* **API testing** with request validation
+* **Page Object Model (POM)** for structured UI tests
+* **Dynamic element handling** (scrolling, lazy-loading)
+* **Safe click helpers** to mitigate flaky tests
+* **Automatic screenshots on failure** for easy debugging
+* **Comprehensive API testing** and validation utilities
 
 ---
 
@@ -100,4 +109,6 @@ web_app_framwork/
 
 ![Test Running GIF](docs/test_run.gif)
 
-> A GIF showing UI tests running locally.
+> A GIF showing UI or API tests running locally.
+
+---
